@@ -1,0 +1,23 @@
+.feedback {
+  &__quote {
+    position: relative;
+    font-style: italic;
+    margin-left: 18px;
+    line-height: 27px;
+    color: rgba(0, 0, 0, 0.7);
+
+
+    &_close {
+      display: inline-block;
+      font-size: 80px;
+      line-height: 0;
+      vertical-align: -35px;
+      margin: 0 12px 0 0;
+      color: #000;
+      @media screen and (max-width: 1023px) {
+        font-size: 60px;
+        vertical-align: -25px;
+      }
+    }
+  }
+}

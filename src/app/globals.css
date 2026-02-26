@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@import 'tailwindcss/utilities';
+
+:root {
+  --light-gray: #797979;
+  --dark-gray: #404040;
+  --gray: #393939;
+  --light-green: #33D3D4;
+  --light-blue: #3DFEFF;
+  --dark-blue: #2562FF;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  src: url('/fonts/ProductSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('/fonts/SF-Pro-Display-Semibold.otf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('/fonts/SF-Pro-Text-Regular.otf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: 1px solid #212121;
+    -webkit-text-fill-color: #212121;
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+  
+  input[type='search']::-webkit-search-decoration,
+  input[type='search']::-webkit-search-cancel-button,
+  input[type='search']::-webkit-search-results-button,
+  input[type='search']::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+}
+
+@layer components {
+  .content-container {
+    @apply mx-auto w-full max-w-[1161px] px-[15px] max-mobile:px-[20px]!;
+  }
+  
+  .text-small-regular {
+    @apply text-[13px] max-mobile:text-[11px] font-normal tracking-normal;
+  }
+  
+  .text-base-regular {
+    @apply text-[15px] max-tablet:text-[14px] max-mobile:text-[13px] font-normal tracking-normal;
+  }
+  
+  .text-big-regular {
+    @apply text-[17px] max-tablet:text-[15px] max-mobile:text-[14px] font-normal tracking-normal;
+  }
+  
+  .text-large-regular {
+    @apply text-[18px] max-tablet:text-[16px] max-mobile:text-[15px] font-normal tracking-normal;
+  }
+  
+  .text-extralarge-regular {
+    @apply text-[24px] max-laptop:text-[21px] max-tablet:text-[19px] max-mobile:text-[17px] font-normal tracking-normal;
+  }
+  
+  .text-heading-regular {
+    @apply text-[50px] max-laptop:text-[30px] max-tablet:text-[25px] max-mobile:text-[22px] font-normal tracking-normal;
+  }
+}
+
+@theme {
+  --breakpoint-mobile: 479px;
+  --breakpoint-laptop: 1439px;
+  --breakpoint-tablet: 1023px;
+  --breakpoint-mini-tablet: 769px;
+  --color-light-gray: var(--light-gray);
+  --color-dark-gray: var(--dark-gray);
+  --color-gray: var(--gray);
+  --color-light-green: var(--light-green);
+  --color-light-blue: var(--light-blue);
+  --color-dark-blue: var(--dark-blue);
+  --font-display: 'SF Pro Display', sans-serif;
+  --font-pro-text: 'SF Pro Text', sans-serif;
+}
+body {
+  font-family: "Product Sans", sans-serif;
+}

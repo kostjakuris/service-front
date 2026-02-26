@@ -1,0 +1,48 @@
+.chooseUs {
+  &__text {
+    margin-top: 8px;
+    line-height: 152%;
+    font-size: 14px;
+    position: relative;
+    padding-left: 17px;
+    color: rgba(0, 0, 0, 0.6);
+
+    @media screen and (max-width: 479px) {
+      font-size: 12px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 4px;
+      content: '';
+      display: block;
+      border-radius: 8px;
+      width: 5px;
+      height: 100%;
+      background-color: var(--light-green);
+    }
+  }
+  &__circle {
+    position: absolute;
+    top: -50px;
+    right: -10%;
+    width: 256px;
+    height: 256px;
+    z-index: -1;
+    border-radius: 50%;
+    background: linear-gradient(
+            90deg,
+            rgba(173, 228, 255, 0.27) 0%,
+            rgba(255, 215, 239, 0.27) 53%,
+            rgba(255, 215, 239, 0.27) 95%
+    );
+    filter: blur(8px);
+    @media screen and (max-width: 1439px) {
+      right: 0;
+    }
+    @media screen and (max-width: 1023px) {
+      display: none;
+    }
+  }
+}
