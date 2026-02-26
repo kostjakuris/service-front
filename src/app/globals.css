@@ -118,4 +118,5 @@
 }
 body {
   font-family: "Product Sans", sans-serif;
+  overflow-x: hidden;
 }
