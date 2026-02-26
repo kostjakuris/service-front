@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './hero.module.scss'
 import { ArrowRight } from 'lucide-react'
 import Instagram from '../../../../public/icons/Instagram'
@@ -10,11 +11,32 @@ import MenAndComputer from '../../../../public/icons/MenAndComputer'
 import Bitcoin from '../../../../public/icons/Bitcoin'
 
 const Hero = () => {
+	const blockRef = useRef<HTMLDivElement>(null)
+	const [pos, setPos] = useState({ top: 0, right: 0 })
+
+	const updatePosition = () => {
+		const block = blockRef.current
+		if (!block) return
+
+		const blockRect = block.getBoundingClientRect()
+		setPos({
+			top: blockRect.bottom - blockRect.height / 2.2,
+			right: blockRect.left + blockRect.width / 1.2,
+		})
+	}
+
+	useEffect(() => {
+		updatePosition()
+		window.addEventListener('resize', updatePosition)
+		return () => {
+			window.removeEventListener('resize', updatePosition)
+		}
+	}, [])
 	return (
 		<div className={styles.hero}>
 			<div
 				className={
-					'max-laptop:justify-between max-tablet:justify-center max-laptop:gap-[20px] max-tablet:flex-col flex' +
+					'max-tablet:justify-center max-tablet:flex-col flex' +
 					' max-tablet:mx-auto items-center'
 				}
 			>
@@ -35,7 +57,7 @@ const Hero = () => {
 					<button className={`text-big-regular ${styles.hero__button}`}>
 						Get Started <ArrowRight className={'w-[24px]'} />
 					</button>
-					<div className={'max-tablet:my-[36px] mt-[36px] flex items-center gap-[18px]'}>
+					<div className={'mt-[36px] mb-[52px] flex items-center gap-[18px]'}>
 						<Link href='/'>
 							<Twitter />
 						</Link>
@@ -47,16 +69,17 @@ const Hero = () => {
 						</Link>
 					</div>
 				</div>
-				<div
-					className={'max-laptop:max-w-[52%] max-tablet:max-w-full max-tablet:hidden relative'}
-				>
-					<MenAndComputer className={'max-tablet:mx-auto'} />
-					<Bitcoin
-						className={
-							'max-laptop:-right-[10%] max-tablet:right-[10%] absolute right-[10%] bottom-[7%]'
-						}
-					/>
+				<div ref={blockRef} className={'max-tablet:hidden h-[-webkit-fill-available] flex-1'}>
+					<MenAndComputer className={'max-tablet:mx-auto h-full w-full'} />
 				</div>
+				<Bitcoin
+					className={'max-laptop:hidden'}
+					style={{
+						position: 'absolute',
+						top: pos.top,
+						left: pos.right,
+					}}
+				/>
 			</div>
 			<div>
 				<p className={styles.hero__trusted_text}>Trusted by 4,000+ companies</p>

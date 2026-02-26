@@ -6,12 +6,11 @@ const MenAndComputer = ({ className, ...props }: IconProps) => {
 		<svg
 			className={className}
 			{...props}
-			width='777'
-			height='611'
-			viewBox='210 110 743 411'
+			viewBox='60 45 777 600'
 			fill='none'
 			xmlns='http://www.w3.org/2000/svg'
 			xmlnsXlink='http://www.w3.org/1999/xlink'
+			preserveAspectRatio='xMidYMid slice'
 		>
 			<rect x='225' y='25' width='162' height='138' fill='url(#pattern0_128_10)' />
 			<g filter='url(#filter0_d_128_10)'>
@@ -60,8 +59,6 @@ const MenAndComputer = ({ className, ...props }: IconProps) => {
 					id='filter0_d_128_10'
 					x='0'
 					y='0'
-					width='732'
-					height='611'
 					filterUnits='userSpaceOnUse'
 					colorInterpolationFilters='sRGB'
 				>

@@ -74,7 +74,7 @@
 
 @layer components {
   .content-container {
-    @apply mx-auto w-full max-w-[1161px] px-[15px] max-mobile:px-[20px]!;
+    @apply mx-auto overflow-x-hidden w-full max-w-[1161px] px-[15px] max-mobile:px-[20px]!;
   }
   
   .text-small-regular {
