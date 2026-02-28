@@ -3,8 +3,7 @@ import circleStyles from '@/components/homePage/circleGradient/circle-gradient.m
 
 export default function Home() {
 	return (
-		<div className='content-container'>
-			<Header />
+		<div>
 			<Hero />
 			<ServiceCards />
 			<div className={'relative flex flex-col items-center'}>

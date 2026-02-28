@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
     "framer-motion": "^12.34.3",
     "lucide-react": "^0.572.0",
     "next": "16.1.6",
@@ -15,6 +16,7 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-redux": "^9.2.0",
     "sass": "^1.97.3"
   },
   "devDependencies": {

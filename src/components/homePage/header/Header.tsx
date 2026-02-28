@@ -1,15 +1,21 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import styles from './header.module.scss'
 import { ArrowRight } from 'lucide-react'
 import MobileMenu from '../../../../public/icons/MobileMenu'
 import NavMobile from '@/components/navMobile/NavMobile'
+import { useAppDispatch, useAppSelector } from '@/lib/hooks'
+import { setIsNavbarOpen } from '@/lib/slice'
+import { usePathname, useRouter } from 'next/navigation'
 
 const Header = () => {
-	const [isNavbarOpen, setIsNavbarOpen] = useState(false)
+	const { isNavbarOpen } = useAppSelector((state) => state.app)
+	const dispatch = useAppDispatch()
+	const router = useRouter()
+	const pathname = usePathname()
 	return (
 		<div className={styles.header}>
-			<div className={'relative'}>
+			<a href='/' className={'relative'}>
 				<div
 					className={
 						'absolute top-0 left-1 z-[-1] h-[16px] w-[34px] rounded-[17px] bg-[#D1F0FF]'
@@ -18,16 +24,22 @@ const Header = () => {
 				<p className={styles.header__logo_text}>
 					U N A D A . <span className={'text-[#C9C9C9]'}>|</span>
 				</p>
-			</div>
+			</a>
 			<nav className={'max-tablet:hidden'}>
 				<ul className={'flex items-center justify-between'}>
 					<li
-						className={`text-big-regular text-dark-gray mr-[34px] ${styles.header__nav_items}`}
+						onClick={() => router.push('/')}
+						className={`${
+							pathname === '/' ? 'text-dark-gray' : 'text-light-gray'
+						} text-big-regular mr-[34px] ${styles.header__nav_items}`}
 					>
 						Home
 					</li>
 					<li
-						className={`text-big-regular text-light-gray mr-[32px] ${styles.header__nav_items}`}
+						onClick={() => router.push('/services')}
+						className={`${
+							pathname === '/services' ? 'text-dark-gray' : 'text-light-gray'
+						} text-big-regular mr-[32px] ${styles.header__nav_items}`}
 					>
 						Services
 					</li>
@@ -53,10 +65,13 @@ const Header = () => {
 				Contact Us
 				<ArrowRight className={'text-light-green ml-[12px]'} />
 			</a>
-			<button className={'max-tablet:block hidden'} onClick={() => setIsNavbarOpen(true)}>
+			<button
+				className={'max-tablet:block hidden'}
+				onClick={() => dispatch(setIsNavbarOpen(true))}
+			>
 				<MobileMenu />
 			</button>
-			{isNavbarOpen && <NavMobile setIsNavbarOpen={setIsNavbarOpen} />}
+			{isNavbarOpen && <NavMobile />}
 		</div>
 	)
 }

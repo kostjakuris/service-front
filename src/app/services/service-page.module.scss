@@ -1,0 +1,17 @@
+.service {
+  &__input {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #E4E4E4;
+    outline: none;
+    padding: 8px 0 8px 15px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+
+    @media screen and (max-width: 479px) {
+      font-size: 14px;
+    }
+  }
+}
