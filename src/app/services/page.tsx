@@ -1,8 +1,22 @@
 import React from 'react'
 import styles from './service-page.module.scss'
 import { PaginatedServices } from '@/components/servicesPage'
+import { Metadata } from 'next'
 
-const ServicePage = () => {
+export const metadata: Metadata = {
+	title: 'Services',
+	description: 'Explore all of our services.',
+}
+
+type Params = {
+	searchParams: Promise<{
+		page?: string
+	}>
+}
+
+const ServicePage = async (props: Params) => {
+	const searchParams = await props.searchParams
+	const { page } = searchParams
 	return (
 		<div>
 			<h2
@@ -13,7 +27,7 @@ const ServicePage = () => {
 				Our Services Comprehensive Solutions, All in One Place
 			</h2>
 			<input type='text' placeholder={'Search service...'} className={styles.service__input} />
-			<PaginatedServices />
+			<PaginatedServices page={page ?? '1'} />
 		</div>
 	)
 }

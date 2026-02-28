@@ -1,7 +1,6 @@
 'use client'
 import React, { useMemo } from 'react'
 import { ServiceCard } from '@/components/homePage'
-import { useSearchParams } from 'next/navigation'
 import { Pagination } from '@/components/servicesPage'
 
 type FakeService = {
@@ -10,9 +9,8 @@ type FakeService = {
 	text: string
 }
 
-const PaginatedServices = () => {
-	const params = useSearchParams()
-	const page = Math.max(1, parseInt(params.get('page') || '1', 10))
+const PaginatedServices = ({ page }: { page: string }) => {
+	const currentPage = Math.max(1, parseInt(page || '1', 10))
 
 	const serviceLimit = 12
 
@@ -27,7 +25,7 @@ const PaginatedServices = () => {
 	const totalCount = allServices.length
 	const totalPages = Math.ceil(totalCount / serviceLimit)
 
-	const safePage = Math.min(page, totalPages || 1)
+	const safePage = Math.min(currentPage, totalPages || 1)
 	const start = (safePage - 1) * serviceLimit
 	const end = start + serviceLimit
 	const pageItems = allServices.slice(start, end)
