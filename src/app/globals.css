@@ -2,36 +2,9 @@
 @import 'tailwindcss/utilities';
 
 :root {
-  --light-gray: #797979;
-  --dark-gray: #404040;
-  --gray: #393939;
-  --light-green: #33D3D4;
-  --light-blue: #3DFEFF;
-  --dark-blue: #2562FF;
-}
-
-@font-face {
-  font-family: 'Product Sans';
-  src: url('/fonts/ProductSans-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('/fonts/SF-Pro-Display-Semibold.otf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Text';
-  src: url('/fonts/SF-Pro-Text-Regular.otf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+  --light-orange: #DF6951FF;
+  --light-yellow: #F1A501FF;
+  --dark-blue: #212832FF;
 }
 
 @layer utilities {
@@ -74,31 +47,23 @@
 
 @layer components {
   .content-container {
-    @apply mx-auto overflow-x-hidden w-full max-w-[1161px] px-[15px] max-mobile:px-[20px]!;
-  }
-  
-  .text-small-regular {
-    @apply text-[13px] max-mobile:text-[11px] font-normal tracking-normal;
+    @apply mx-auto w-full max-w-[1160px] px-[15px] max-mobile:px-[20px]!;
   }
   
   .text-base-regular {
-    @apply text-[15px] max-tablet:text-[14px] max-mobile:text-[13px] font-normal tracking-normal;
+    @apply text-[16px] max-tablet:text-[14px] max-mobile:text-[12px] leading-none font-normal tracking-normal;
   }
   
   .text-big-regular {
-    @apply text-[17px] max-tablet:text-[15px] max-mobile:text-[14px] font-normal tracking-normal;
+    @apply text-[18px] max-tablet:text-[16px] max-mobile:text-[14px] font-normal leading-none tracking-normal;
   }
   
-  .text-large-regular {
-    @apply text-[18px] max-tablet:text-[16px] max-mobile:text-[15px] font-normal tracking-normal;
+  .text-big-semibold {
+    @apply text-[18px] max-tablet:text-[16px] max-mobile:text-[14px] font-semibold leading-none tracking-normal;
   }
   
-  .text-extralarge-regular {
-    @apply text-[24px] max-laptop:text-[21px] max-tablet:text-[19px] max-mobile:text-[17px] font-normal tracking-normal;
-  }
-  
-  .text-heading-regular {
-    @apply text-[50px] max-laptop:text-[30px] max-tablet:text-[25px] max-mobile:text-[22px] font-normal tracking-normal;
+  .text-heading-bold {
+    @apply text-[50px] max-tablet:text-[35px] max-mobile:text-[28px] font-bold leading-none tracking-normal;
   }
 }
 
@@ -107,16 +72,20 @@
   --breakpoint-laptop: 1439px;
   --breakpoint-tablet: 1023px;
   --breakpoint-mini-tablet: 769px;
-  --color-light-gray: var(--light-gray);
-  --color-dark-gray: var(--dark-gray);
-  --color-gray: var(--gray);
-  --color-light-green: var(--light-green);
-  --color-light-blue: var(--light-blue);
+  --color-light-orange: var(--light-orange);
+  --color-light-yellow: var(--light-yellow);
   --color-dark-blue: var(--dark-blue);
-  --font-display: 'SF Pro Display', sans-serif;
-  --font-pro-text: 'SF Pro Text', sans-serif;
+  --font-google-sans: var(--font-google-sans), sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
+  --font-volkhov: var(--font-volkhov), serif;
+  --font-open-sans: var(--font-open-sans), sans-serif;
+  --font-montserrat: var(--font-montserrat), sans-serif;
 }
+
 body {
-  font-family: "Product Sans", sans-serif;
-  overflow-x: hidden;
+  font-family: var(--font-poppins), sans-serif;
+  padding-right: 0 !important;
+  overflow: auto !important;
 }
+
+

@@ -1,32 +1,15 @@
-import { ChooseUs, Feedback, Header, Hero, ServiceCards } from '@/components/homePage'
-import circleStyles from '@/components/homePage/circleGradient/circle-gradient.module.scss'
+import { Hero } from '@/components/homePage'
+import HeroBackground from '../../public/icons/HeroBackground'
 
 export default function Home() {
 	return (
 		<div>
-			<Hero />
-			<ServiceCards />
-			<div className={'relative flex flex-col items-center'}>
-				<span className={circleStyles.circle__gradient} />
-				<h2
-					className={
-						'text-heading-regular text-gray text-shadow-[0_4px_31px_rgba(0, 0, 0, 0.11)] text-center'
-					}
-				>
-					End-To-End Development Services
-				</h2>
-				<p
-					className={
-						'text-extralarge-regular mt-[29px] ml-[24px] text-center leading-[105%] opacity-70'
-					}
-				>
-					Sometimes, we need to check the time, wondering when our work or meeting will finish,
-					without getting caught by others.
-				</p>
-				<img className={'mt-[71px]'} src='/images/building.png' alt='building' />
+			<div className={'max-tablet:hidden absolute top-0 right-0 -z-1'}>
+				<HeroBackground />
 			</div>
-			<ChooseUs />
-			<Feedback />
+			<div className={'content-container'}>
+				<Hero />
+			</div>
 		</div>
 	)
 }

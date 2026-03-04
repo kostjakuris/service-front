@@ -1,5 +1,6 @@
 import React from 'react'
-import { IconProps } from './Instagram'
+
+export interface IconProps extends React.ImgHTMLAttributes<SVGElement> {}
 
 const MobileMenu = ({ className, ...props }: IconProps) => {
 	return (

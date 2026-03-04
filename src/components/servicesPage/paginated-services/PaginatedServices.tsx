@@ -1,5 +1,5 @@
 'use client'
-import React, { useMemo } from 'react'
+import React, { FC, useMemo } from 'react'
 import { ServiceCard } from '@/components/homePage'
 import { Pagination } from '@/components/servicesPage'
 
@@ -9,7 +9,12 @@ type FakeService = {
 	text: string
 }
 
-const PaginatedServices = ({ page }: { page: string }) => {
+interface PaginatedServicesProps {
+	page: string
+	isPagination?: boolean
+}
+
+const PaginatedServices: FC<PaginatedServicesProps> = ({ page, isPagination = true }) => {
 	const currentPage = Math.max(1, parseInt(page || '1', 10))
 
 	const serviceLimit = 12
@@ -37,7 +42,7 @@ const PaginatedServices = ({ page }: { page: string }) => {
 					<ServiceCard key={item.id} title={item.title} text={item.text} />
 				))}
 			</div>
-			{totalPages > 1 && (
+			{totalPages > 1 && isPagination && (
 				<Pagination data-testid='product-pagination' page={safePage} totalPages={totalPages} />
 			)}
 		</div>

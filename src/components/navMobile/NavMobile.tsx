@@ -1,18 +1,17 @@
 'use client'
 import React from 'react'
 import styles from '@/components/homePage/header/header.module.scss'
-import { ArrowRight } from 'lucide-react'
 import Close from '../../../public/icons/Close'
 import { motion } from 'framer-motion'
 import navStyles from './nav-mobile.module.scss'
-import { useAppDispatch } from '@/lib/hooks'
-import { setIsNavbarOpen } from '@/lib/slice'
-import { usePathname, useRouter } from 'next/navigation'
+import { useAppDispatch, useAppSelector } from '@/lib/hooks'
+import { setIsNavbarOpen, setSelectedLanguage } from '@/lib/slice'
+import UISelect from '@/components/ui/select/Select'
+import { MenuItem } from '@mui/material'
 
 const NavMobile = () => {
 	const dispatch = useAppDispatch()
-	const router = useRouter()
-	const pathname = usePathname()
+	const { selectedLanguage } = useAppSelector((state) => state.app)
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 10 }}
@@ -26,44 +25,54 @@ const NavMobile = () => {
 				<ul className={'flex flex-col items-center justify-center gap-[20px]'}>
 					<li
 						onClick={() => {
-							router.push('/')
 							dispatch(setIsNavbarOpen(false))
 						}}
-						className={`text-big-regular ${
-							pathname === '/' ? 'text-dark-gray' : 'text-light-gray'
-						} ${styles.header__nav_items}`}
+						className={`text-base-regular ${styles.header__nav_items}`}
 					>
-						Home
+						Destinations
 					</li>
 					<li
 						onClick={() => {
-							router.push('/services')
 							dispatch(setIsNavbarOpen(false))
 						}}
-						className={`text-big-regular ${
-							pathname === '/services' ? 'text-dark-gray' : 'text-light-gray'
-						} ${styles.header__nav_items}`}
+						className={`text-base-regular ${styles.header__nav_items}`}
 					>
-						Services
+						Hotels
 					</li>
-					<li className={`text-big-regular text-light-gray ${styles.header__nav_items}`}>
-						Metaverse
-					</li>
-					<li className={`text-big-regular text-light-gray ${styles.header__nav_items}`}>
-						Careers
-					</li>
-					<li className={`text-big-regular text-light-gray ${styles.header__nav_items}`}>
-						Blog
-					</li>
+					<li className={`text-base-regular ${styles.header__nav_items}`}>Flights</li>
+					<li className={`text-base-regular ${styles.header__nav_items}`}>Bookings</li>
 				</ul>
 			</nav>
-			<a
-				className={'text-big-regular text-light-green mb-[20px] flex items-center'}
-				href='/public'
-			>
-				Contact Us
-				<ArrowRight className={'text-light-green ml-[12px]'} />
-			</a>
+			<div className={'flex flex-col items-center justify-center gap-[20px]'}>
+				<UISelect
+					value={selectedLanguage}
+					onValueChange={(event) => dispatch(setSelectedLanguage(event.target.value))}
+				>
+					<MenuItem
+						sx={{
+							fontSize: '13px',
+							fontFamily: 'var(--font-google-sans)',
+						}}
+						value={'en'}
+					>
+						EN
+					</MenuItem>
+					<MenuItem
+						sx={{
+							fontSize: '13px',
+							fontFamily: 'var(--font-google-sans)',
+							'&:hover': {
+								backgroundColor: 'rgb(28 118 210 / 22%)',
+							},
+						}}
+						value={'ru'}
+					>
+						RU
+					</MenuItem>
+				</UISelect>
+				<button className={styles.header__nav_items}>Login</button>
+				<button className={styles.header__signUp_button}>Sign up</button>
+			</div>
 		</motion.div>
 	)
 }
