@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconProps } from './Instagram'
+import { IconProps } from './MobileMenu'
 
 const Close = ({ className, ...props }: IconProps) => {
 	return (
