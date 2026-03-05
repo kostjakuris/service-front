@@ -8,6 +8,7 @@ import { setIsNavbarOpen, setSelectedLanguage } from '@/lib/slice'
 import Logo from '../../../../public/icons/Logo'
 import { MenuItem } from '@mui/material'
 import UISelect from '@/components/ui/select/Select'
+import Link from 'next/link'
 
 const Header = () => {
 	const { isNavbarOpen } = useAppSelector((state) => state.app)
@@ -15,64 +16,70 @@ const Header = () => {
 	const { selectedLanguage } = useAppSelector((state) => state.app)
 
 	return (
-		<div className={`content-container ${styles.header}`}>
+		<header className={styles.header}>
 			<a href='/'>
 				<Logo />
 			</a>
-			<div className={'max-tablet:hidden flex items-center justify-between gap-[86px]'}>
-				<nav>
-					<ul className={'flex items-center justify-between gap-[55px]'}>
-						<li className={`text-base-regular ${styles.header__nav_items}`}>Destinations</li>
-						<li className={`text-base-regular mr-[9px] ${styles.header__nav_items}`}>
-							Hotels
-						</li>
-						<li className={`text-base-regular mr-[7px] ${styles.header__nav_items}`}>
-							Flights
-						</li>
-						<li className={`text-base-regular ${styles.header__nav_items}`}>Bookings</li>
-					</ul>
-				</nav>
-				<div className={'flex items-center justify-between gap-[42px]'}>
-					<button className={`mr-[10px] font-medium! ${styles.header__nav_items}`}>
-						Login
-					</button>
-					<button className={styles.header__signUp_button}>Sign up</button>
-					<UISelect
-						value={selectedLanguage}
-						onValueChange={(event) => dispatch(setSelectedLanguage(event.target.value))}
+			<nav className={'max-tablet:hidden flex items-center gap-[42px]'}>
+				<ul className={'flex items-center gap-[55px]'}>
+					<li className={`text-base-regular ${styles.header__nav_items}`}>
+						<Link href={'/'}>Destinations</Link>
+					</li>
+					<li className={`text-base-regular mr-[9px] ${styles.header__nav_items}`}>
+						<Link href={'/'}>Hotels</Link>
+					</li>
+					<li className={`text-base-regular mr-[7px] ${styles.header__nav_items}`}>
+						<Link href={'/'}>Flights</Link>
+					</li>
+					<li className={`text-base-regular ${styles.header__nav_items}`}>
+						<Link href={'/'}>Bookings</Link>
+					</li>
+				</ul>
+				<Link
+					href={'/'}
+					className={`mr-[10px] ml-[44px] font-medium! ${styles.header__nav_items}`}
+				>
+					Login
+				</Link>
+				<Link href={'/'} className={styles.header__signUp_button}>
+					Sign up
+				</Link>
+				<UISelect
+					value={selectedLanguage}
+					onValueChange={(event) => dispatch(setSelectedLanguage(event.target.value))}
+				>
+					<MenuItem
+						sx={{
+							fontSize: '17px',
+							fontFamily: 'var(--font-google-sans)',
+						}}
+						value={'en'}
 					>
-						<MenuItem
-							sx={{
-								fontSize: '17px',
-								fontFamily: 'var(--font-google-sans)',
-							}}
-							value={'en'}
-						>
-							EN
-						</MenuItem>
-						<MenuItem
-							sx={{
-								fontSize: '17px',
-								fontFamily: 'var(--font-google-sans)',
-								'&:hover': {
-									backgroundColor: 'rgb(28 118 210 / 22%)',
-								},
-							}}
-							value={'ru'}
-						>
-							RU
-						</MenuItem>
-					</UISelect>
-				</div>
-			</div>
+						EN
+					</MenuItem>
+					<MenuItem
+						sx={{
+							fontSize: '17px',
+							fontFamily: 'var(--font-google-sans)',
+							'&:hover': {
+								backgroundColor: 'rgb(28 118 210 / 22%)',
+							},
+						}}
+						value={'ru'}
+					>
+						RU
+					</MenuItem>
+				</UISelect>
+			</nav>
 			<button
+				aria-label='Open menu'
 				className={'max-tablet:block! hidden!'}
 				onClick={() => dispatch(setIsNavbarOpen(true))}
 			>
 				<MobileMenu />
 			</button>
 			{isNavbarOpen && <NavMobile />}
-		</div>
+		</header>
 	)
 }
 

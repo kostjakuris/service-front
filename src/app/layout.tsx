@@ -50,10 +50,12 @@ export default function RootLayout({
 			className={` ${googleSans.variable} ${poppins.variable} ${volkhov.variable} ${openSans.variable} ${montserrat.variable}`}
 		>
 			<body>
-				<StoreProvider>
-					<Header />
-					{children}
-				</StoreProvider>
+				<div className={'content-container'}>
+					<StoreProvider>
+						<Header />
+						{children}
+					</StoreProvider>
+				</div>
 			</body>
 		</html>
 	)

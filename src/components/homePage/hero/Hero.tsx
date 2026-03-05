@@ -5,7 +5,7 @@ import Tourist from '../../../../public/icons/Tourist'
 
 const Hero = () => {
 	return (
-		<div className={styles.hero}>
+		<section className={styles.hero}>
 			<div className={'max-laptop:max-w-[50%] max-tablet:max-w-full w-full max-w-[44%]'}>
 				<p className={styles.hero__sub_title}>Best Destinations around the world</p>
 				<h1 className={styles.hero__title}>
@@ -18,23 +18,23 @@ const Hero = () => {
 				</p>
 				<div className={'max-mobile:gap-[25px] mt-[34px] flex items-center gap-[44px]'}>
 					<button className={styles.hero__button}>Find out more</button>
-					<p
+					<button
 						className={
-							'text-base-regular max-tablet:text-[15px] max-mobile:text-[13px] flex items-center gap-[21px]' +
+							'max-tablet:text-[15px] max-mobile:text-[13px] flex cursor-pointer items-center gap-[21px] ' +
 							' max-mobile:gap-[15px] text-[17px] font-medium whitespace-nowrap text-[#50555F]'
 						}
 					>
-						<button className={styles.hero__play_button}>
+						<span className={styles.hero__play_button}>
 							<span className={styles.hero__triangle}></span>
-						</button>{' '}
+						</span>
 						Play Demo
-					</p>
+					</button>
 				</div>
 			</div>
 			<div className={'max-laptop:max-w-[50%] max-tablet:hidden relative w-full max-w-[56%]'}>
 				<Tourist className={'max-laptop:h-[600px]'} />
 			</div>
-		</div>
+		</section>
 	)
 }
 

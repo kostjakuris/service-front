@@ -8,6 +8,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/hooks'
 import { setIsNavbarOpen, setSelectedLanguage } from '@/lib/slice'
 import UISelect from '@/components/ui/select/Select'
 import { MenuItem } from '@mui/material'
+import Link from 'next/link'
 
 const NavMobile = () => {
 	const dispatch = useAppDispatch()
@@ -23,24 +24,18 @@ const NavMobile = () => {
 			</button>
 			<nav>
 				<ul className={'flex flex-col items-center justify-center gap-[20px]'}>
-					<li
-						onClick={() => {
-							dispatch(setIsNavbarOpen(false))
-						}}
-						className={`text-base-regular ${styles.header__nav_items}`}
-					>
-						Destinations
+					<li className={`text-base-regular ${styles.header__nav_items}`}>
+						<Link href={'/'}>Destinations</Link>
 					</li>
-					<li
-						onClick={() => {
-							dispatch(setIsNavbarOpen(false))
-						}}
-						className={`text-base-regular ${styles.header__nav_items}`}
-					>
-						Hotels
+					<li className={`text-base-regular ${styles.header__nav_items}`}>
+						<Link href={'/'}>Hotels</Link>
 					</li>
-					<li className={`text-base-regular ${styles.header__nav_items}`}>Flights</li>
-					<li className={`text-base-regular ${styles.header__nav_items}`}>Bookings</li>
+					<li className={`text-base-regular ${styles.header__nav_items}`}>
+						<Link href={'/'}>Flights</Link>
+					</li>
+					<li className={`text-base-regular ${styles.header__nav_items}`}>
+						<Link href={'/'}>Bookings</Link>
+					</li>
 				</ul>
 			</nav>
 			<div className={'flex flex-col items-center justify-center gap-[20px]'}>
@@ -70,8 +65,12 @@ const NavMobile = () => {
 						RU
 					</MenuItem>
 				</UISelect>
-				<button className={styles.header__nav_items}>Login</button>
-				<button className={styles.header__signUp_button}>Sign up</button>
+				<Link href={'/'} className={styles.header__nav_items}>
+					Login
+				</Link>
+				<Link href={'/'} className={styles.header__signUp_button}>
+					Sign up
+				</Link>
 			</div>
 		</motion.div>
 	)
