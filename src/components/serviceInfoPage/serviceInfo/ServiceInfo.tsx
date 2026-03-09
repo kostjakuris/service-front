@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import Button from '@/components/ui/button/Button'
 import { ArrowRight } from 'lucide-react'
 import { PaginatedServices } from '@/components/servicesPage'
 
@@ -12,13 +11,13 @@ const ServiceInfo = () => {
 				Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
 				consequat duis enim velit mollit.
 			</p>
-			<Button
-				variant={'primary'}
-				className={'mt-[15px] flex items-center gap-[12px] py-[13.5px] pr-[14px] pl-[13px]'}
-			>
-				Plan service
-				<ArrowRight className={'w-[24px]'} />
-			</Button>
+			{/*<Button*/}
+			{/*	variant={'primary'}*/}
+			{/*	className={'mt-[15px] flex items-center gap-[12px] py-[13.5px] pr-[14px] pl-[13px]'}*/}
+			{/*>*/}
+			{/*	Plan service*/}
+			{/*	<ArrowRight className={'w-[24px]'} />*/}
+			{/*</Button>*/}
 			<div
 				className={
 					'max-tablet:grid-cols-[repeat(auto-fit,max-content)] max-mini-tablet:grid-cols-2 mt-[30px] grid' +
