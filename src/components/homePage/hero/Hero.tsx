@@ -6,7 +6,10 @@ import Tourist from '../../../../public/icons/Tourist'
 const Hero = () => {
 	return (
 		<section className={styles.hero}>
-			<div className={'max-laptop:max-w-[50%] max-tablet:max-w-full w-full max-w-[44%]'}>
+			<div
+				aria-label='hero info'
+				className={'max-laptop:max-w-[50%] max-tablet:max-w-full w-full max-w-[44%]'}
+			>
 				<p className={styles.hero__sub_title}>Best Destinations around the world</p>
 				<h1 className={styles.hero__title}>
 					Travel, <span className={styles.hero__title_line}>enjoy </span> and live a new and
@@ -31,7 +34,10 @@ const Hero = () => {
 					</button>
 				</div>
 			</div>
-			<div className={'max-laptop:max-w-[50%] max-tablet:hidden relative w-full max-w-[56%]'}>
+			<div
+				aria-label='hero image'
+				className={'max-laptop:max-w-[50%] max-tablet:hidden relative w-full max-w-[56%]'}
+			>
 				<Tourist className={'max-laptop:h-[600px]'} />
 			</div>
 		</section>
