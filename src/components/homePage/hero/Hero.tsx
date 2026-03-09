@@ -7,8 +7,8 @@ const Hero = () => {
 	return (
 		<section className={styles.hero}>
 			<div
-				aria-label='hero info'
-				className={'max-laptop:max-w-[50%] max-tablet:max-w-full w-full max-w-[44%]'}
+				data-component='hero__info'
+				className={'max-laptop:max-w-[50%] max-tablet:max-w-full h-full w-full max-w-[44%]'}
 			>
 				<p className={styles.hero__sub_title}>Best Destinations around the world</p>
 				<h1 className={styles.hero__title}>
@@ -19,15 +19,21 @@ const Hero = () => {
 					Built Wicket longer admire do barton vanity itself do in it. Preferred to sportsmen
 					it engrossed listening. Park gate sell they west hard for the.
 				</p>
-				<div className={'max-mobile:gap-[25px] mt-[34px] flex items-center gap-[44px]'}>
-					<button className={styles.hero__button}>Find out more</button>
+				<div
+					data-component='hero__buttons'
+					className={'max-mobile:gap-[25px] mt-[34px] flex items-center' + ' gap-[44px]'}
+				>
+					<button data-element='hero__button' className={styles.hero__button}>
+						Find out more
+					</button>
 					<button
+						data-element='hero__button'
 						className={
 							'max-tablet:text-[15px] max-mobile:text-[13px] flex cursor-pointer items-center gap-[21px] ' +
 							' max-mobile:gap-[15px] text-[17px] font-medium whitespace-nowrap text-[#50555F]'
 						}
 					>
-						<span className={styles.hero__play_button}>
+						<span data-element='hero__button_content' className={styles.hero__play_button}>
 							<span className={styles.hero__triangle}></span>
 						</span>
 						Play Demo
@@ -35,8 +41,8 @@ const Hero = () => {
 				</div>
 			</div>
 			<div
-				aria-label='hero image'
-				className={'max-laptop:max-w-[50%] max-tablet:hidden relative w-full max-w-[56%]'}
+				data-component='hero__image'
+				className={'max-laptop:max-w-[50%] max-tablet:hidden relative h-fit w-full max-w-[56%]'}
 			>
 				<Tourist className={'max-laptop:h-[600px]'} />
 			</div>

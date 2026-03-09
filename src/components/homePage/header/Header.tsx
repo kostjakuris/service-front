@@ -17,16 +17,16 @@ const Header = () => {
 
 	return (
 		<header className={styles.header}>
-			<div aria-label='logo'>
+			<div data-component='logo'>
 				<a href='/'>
 					<Logo />
 				</a>
 			</div>
-			<nav
-				aria-label='header navigation'
-				className={'max-tablet:hidden flex w-full items-center'}
-			>
-				<ul className={'m-auto flex w-fit items-center gap-[55px]'}>
+			<nav data-component='header__nav' className={'max-tablet:hidden flex w-full items-center'}>
+				<ul
+					data-component='header__nav_list'
+					className={'m-auto flex w-fit items-center gap-[55px]'}
+				>
 					<li className={`text-base-regular ${styles.header__nav_items}`}>
 						<Link href={'/'}>Destinations</Link>
 					</li>
@@ -40,7 +40,7 @@ const Header = () => {
 						<Link href={'/'}>Bookings</Link>
 					</li>
 				</ul>
-				<div aria-label='header auth buttons' className={'flex items-center gap-[42px]'}>
+				<div data-component='header__nav_buttons' className={'flex items-center gap-[42px]'}>
 					<Link href={'/'} className={`mr-[10px] font-medium! ${styles.header__nav_items}`}>
 						Login
 					</Link>

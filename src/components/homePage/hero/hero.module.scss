@@ -2,13 +2,6 @@
   display: flex;
   align-items: center;
   margin-top: 18px;
-  //background-image: url("/images/image.png");
-  //background-repeat: no-repeat;
-  //background-position: top 0 right 0;
-  //background-size: contain;
-  //@media screen and (max-width: 1023px) {
-  //  background-image: none;
-  //}
 
   &__sub_title {
     font-size: 20px;
@@ -55,12 +48,13 @@
       content: "";
       position: absolute;
       left: -25px;
-      bottom: -30px;
+      bottom: 8px;
       z-index: -1;
-      height: 100%;
+      height: fit-content;
       width: 130%;
+      aspect-ratio: 300/10;
       background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-size: contain;
       background-image: url("/icons/decore.svg");
     }
   }
