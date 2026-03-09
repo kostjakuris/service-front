@@ -20,8 +20,8 @@ const Header = () => {
 			<a href='/'>
 				<Logo />
 			</a>
-			<nav className={'max-tablet:hidden flex items-center gap-[42px]'}>
-				<ul className={'flex items-center gap-[55px]'}>
+			<nav className={'max-tablet:hidden flex w-full items-center'}>
+				<ul className={'m-auto flex w-fit items-center gap-[55px]'}>
 					<li className={`text-base-regular ${styles.header__nav_items}`}>
 						<Link href={'/'}>Destinations</Link>
 					</li>
@@ -35,41 +35,40 @@ const Header = () => {
 						<Link href={'/'}>Bookings</Link>
 					</li>
 				</ul>
-				<Link
-					href={'/'}
-					className={`mr-[10px] ml-[44px] font-medium! ${styles.header__nav_items}`}
-				>
-					Login
-				</Link>
-				<Link href={'/'} className={styles.header__signUp_button}>
-					Sign up
-				</Link>
-				<UISelect
-					value={selectedLanguage}
-					onValueChange={(event) => dispatch(setSelectedLanguage(event.target.value))}
-				>
-					<MenuItem
-						sx={{
-							fontSize: '17px',
-							fontFamily: 'var(--font-google-sans)',
-						}}
-						value={'en'}
+				<div className={'flex items-center gap-[42px]'}>
+					<Link href={'/'} className={`mr-[10px] font-medium! ${styles.header__nav_items}`}>
+						Login
+					</Link>
+					<Link href={'/'} className={styles.header__signUp_button}>
+						Sign up
+					</Link>
+					<UISelect
+						value={selectedLanguage}
+						onValueChange={(event) => dispatch(setSelectedLanguage(event.target.value))}
 					>
-						EN
-					</MenuItem>
-					<MenuItem
-						sx={{
-							fontSize: '17px',
-							fontFamily: 'var(--font-google-sans)',
-							'&:hover': {
-								backgroundColor: 'rgb(28 118 210 / 22%)',
-							},
-						}}
-						value={'ru'}
-					>
-						RU
-					</MenuItem>
-				</UISelect>
+						<MenuItem
+							sx={{
+								fontSize: '17px',
+								fontFamily: 'var(--font-google-sans)',
+							}}
+							value={'en'}
+						>
+							EN
+						</MenuItem>
+						<MenuItem
+							sx={{
+								fontSize: '17px',
+								fontFamily: 'var(--font-google-sans)',
+								'&:hover': {
+									backgroundColor: 'rgb(28 118 210 / 22%)',
+								},
+							}}
+							value={'ru'}
+						>
+							RU
+						</MenuItem>
+					</UISelect>
+				</div>
 			</nav>
 			<button
 				aria-label='Open menu'

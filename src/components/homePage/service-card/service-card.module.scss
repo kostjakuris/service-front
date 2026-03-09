@@ -1,63 +1,50 @@
 .card {
-  padding: 16px 16px 30px;
+  padding: 0 40px 45px;
+  border-radius: 36px;
   display: flex;
+  align-items: center;
+  background-color: transparent;
   flex-direction: column;
-  border-radius: 12px;
-  box-shadow: 0 13px 25px 0 #00000012;
-  overflow: hidden;
-  position: relative;
+  transition: box-shadow, scale 0.3s ease-in-out;
 
-  &::before {
-    position: absolute;
-    top: -38%;
-    z-index: -2;
-    left: -10px;
-    content: '';
-    filter: blur(70px);
-    display: block;
-    border-radius: 50%;
-    background: linear-gradient(
-            180deg,
-            rgba(255, 215, 239, 0.48) 3%,
-            rgba(255, 215, 239, 1) 59%,
-            rgba(221, 119, 255, 0.04) 100%
-    );
-    width: 224px;
-    height: 224px;
+  &:hover {
+    box-shadow: 0 1.85px 3.15px rgba(0, 0, 0, 0.0048),
+    0 8.15px 6.52px rgba(0, 0, 0, 0.0079),
+    0 20px 13px rgba(0, 0, 0, 0.01),
+    0 38.52px 25.48px rgba(0, 0, 0, 0.0121),
+    0 64.81px 46.85px rgba(0, 0, 0, 0.0152),
+    0 100px 80px rgba(0, 0, 0, 0.02);
+    scale: 1.06;
+    background-color: white;
   }
 
   &__icon {
-    width: fit-content;
-    height: fit-content;
-    background-color: var(--light-green);
-    border-radius: 50%;
-    padding: 11px 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 29px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 
   &__title {
-    margin-top: 19px;
-    line-height: 133%;
-    position: relative;
-    padding-left: 11px;
+    text-align: center;
+    letter-spacing: 0;
+    font-family: var(--font-open-sans), sans-serif;
     font-size: 20px;
-    color: black;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      content: '';
-      display: block;
-      border-radius: 8px;
-      width: 4px;
-      height: 100%;
-      background-color: var(--light-green);
-    }
+    font-weight: 600;
+    color: rgba(30, 29, 76, 1);
     @media screen and (max-width: 1023px) {
       font-size: 18px;
     }
     @media screen and (max-width: 479px) {
-      font-size: 16px;
+      font-size: 15px;
     }
   }
 }

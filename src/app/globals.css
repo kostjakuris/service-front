@@ -47,7 +47,7 @@
 
 @layer components {
   .content-container {
-    @apply mx-auto w-full max-w-[1160px] px-[15px] max-mobile:px-[20px]!;
+    @apply mx-auto w-full max-w-[1190px] px-[15px] max-mobile:px-[20px]!;
   }
   
   .text-base-regular {
@@ -89,7 +89,7 @@ body {
   
   background-image: url('/icons/background.svg');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: top 0 right 0;
   @media screen and (max-width: 1023px) {
     background-image: none;
   }
