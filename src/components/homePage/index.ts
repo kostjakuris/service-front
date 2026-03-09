@@ -1,4 +1,5 @@
 export { default as Header } from './header/Header'
 export { default as Hero } from './hero/Hero'
 export { default as ServiceCard } from './service-card/ServiceCard'
-export { default as ServiceCards } from './service-cards/ServiceCards'
+export { default as Services } from '@/components/homePage/services/Services'
+export { default as Destinations } from '@/components/homePage/destinations/Destinations'

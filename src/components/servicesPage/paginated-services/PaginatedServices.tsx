@@ -2,6 +2,7 @@
 import React, { FC, useMemo } from 'react'
 import { ServiceCard } from '@/components/homePage'
 import { Pagination } from '@/components/servicesPage'
+import Plane from '../../../../public/icons/Plane'
 
 type FakeService = {
 	id: string
@@ -39,7 +40,7 @@ const PaginatedServices: FC<PaginatedServicesProps> = ({ page, isPagination = tr
 		<div>
 			<div className='max-tablet:grid-cols-2 max-mobile:grid-cols-1 my-[35px] grid grid-cols-4 gap-[16px]'>
 				{pageItems.map((item) => (
-					<ServiceCard key={item.id} title={item.title} text={item.text} />
+					<ServiceCard image={<Plane />} key={item.id} title={item.title} text={item.text} />
 				))}
 			</div>
 			{totalPages > 1 && isPagination && (
