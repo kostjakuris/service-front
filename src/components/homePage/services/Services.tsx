@@ -47,7 +47,7 @@ const Services = () => {
 			</h2>
 			<div
 				className={
-					'max-tablet:grid-cols-2 max-mobile:grid-cols-1 my-[108px] grid grid-cols-4 gap-[25px]'
+					'max-tablet:grid-cols-2 max-mobile:grid-cols-1 mt-[108px] grid grid-cols-4 gap-[25px]'
 				}
 			>
 				{services.map((service) => (

@@ -12,10 +12,10 @@
     width: 100px;
     border-top-left-radius: 30px;
     border-bottom-right-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
   }
 
   &:hover .services__card_hover {
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
   }
 }

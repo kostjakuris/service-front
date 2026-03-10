@@ -5,6 +5,7 @@
   --light-orange: #DF6951FF;
   --light-yellow: #F1A501FF;
   --dark-blue: #212832FF;
+  --light-blue: #5e6282;
 }
 
 @layer utilities {
@@ -54,6 +55,10 @@
     @apply text-[16px] max-tablet:text-[14px] max-mobile:text-[12px] leading-none font-normal tracking-normal;
   }
   
+  .text-base-bold {
+    @apply text-[16px] max-tablet:text-[14px] max-mobile:text-[12px] leading-none font-bold tracking-normal;
+  }
+  
   .text-big-regular {
     @apply text-[18px] max-tablet:text-[16px] max-mobile:text-[14px] font-normal leading-none tracking-normal;
   }
@@ -75,6 +80,7 @@
   --color-light-orange: var(--light-orange);
   --color-light-yellow: var(--light-yellow);
   --color-dark-blue: var(--dark-blue);
+  --color-light-blue: var(--light-blue);
   --font-google-sans: var(--font-google-sans), sans-serif;
   --font-poppins: var(--font-poppins), sans-serif;
   --font-volkhov: var(--font-volkhov), serif;

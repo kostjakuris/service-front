@@ -28,12 +28,15 @@ const Destinations = () => {
 		},
 	]
 	return (
-		<section className={'mt-[92px]'}>
+		<section className={'relative my-[156px]'}>
+			<div className={'max-laptop:hidden absolute -right-[55px] bottom-[47px] -z-1'}>
+				<Decor />
+			</div>
 			<h4 className='text-big-semibold text-center text-[rgba(94,98,130,1)]'>Top Selling</h4>
 			<h2 className='text-heading-bold font-volkhov mt-[10px] text-center text-[rgba(20,24,62,1)]'>
 				Top Destinations
 			</h2>
-			<div className='max-tablet:grid-cols-2 max-mobile:grid-cols-1 my-[60px] grid grid-cols-3 justify-items-center gap-[43px]'>
+			<div className='max-tablet:grid-cols-2 max-mobile:grid-cols-1 mt-[60px] grid grid-cols-3 justify-items-center gap-[43px]'>
 				{destinations.map((destination) => (
 					<div
 						key={destination.id}
@@ -50,11 +53,6 @@ const Destinations = () => {
 								{destination.duration}
 							</span>
 						</div>
-						{destination.id === 3 && (
-							<div className={'max-laptop:hidden absolute -right-[50px] bottom-[47px] -z-1'}>
-								<Decor />
-							</div>
-						)}
 					</div>
 				))}
 			</div>

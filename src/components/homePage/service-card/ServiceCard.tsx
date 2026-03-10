@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+'use client'
+import React, { FC, useRef } from 'react'
 import styles from './service-card.module.scss'
 import Link from 'next/link'
 
@@ -9,8 +10,27 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: FC<ServiceCardProps> = ({ title, text, image }) => {
+	const cardRef = useRef<HTMLAnchorElement>(null)
+	const handleMouseLeave = () => {
+		setTimeout(() => {
+			if (!cardRef.current) return
+			cardRef.current.style.backgroundColor = 'transparent'
+		}, 300)
+	}
+
+	const handleMouseEnter = () => {
+		if (!cardRef.current) return
+		cardRef.current.style.backgroundColor = 'white'
+	}
+
 	return (
-		<Link href={'/services/1'} className={styles.card}>
+		<Link
+			href={'/services/1'}
+			className={styles.card}
+			ref={cardRef}
+			onMouseLeave={handleMouseLeave}
+			onMouseEnter={handleMouseEnter}
+		>
 			<div className={styles.card__icon}>{image}</div>
 			<h4 className={styles.card__title}>{title}</h4>
 			<p
