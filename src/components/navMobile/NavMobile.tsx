@@ -23,7 +23,7 @@ const NavMobile = () => {
 				<Close />
 			</button>
 			<nav>
-				<ul className={'flex flex-col items-center justify-center gap-[20px]'}>
+				<ul className={'flex flex-col items-center justify-center gap-[30px]'}>
 					<li className={`text-base-regular ${styles.header__nav_items}`}>
 						<Link href={'/'}>Destinations</Link>
 					</li>

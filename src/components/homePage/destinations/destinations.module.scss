@@ -1,9 +1,9 @@
 .destinations {
   &__card {
-    flex: 1;
     position: relative;
     display: flex;
     flex-direction: column;
+    width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     box-shadow: 0 1.85px 3.15px 0 rgba(0, 0, 0, 0.0048),
@@ -18,7 +18,7 @@
 
   &__card_info {
     margin-top: auto;
-    border-radius: 0 0 24px 24px;
+    border-radius: 0 0 22.5px 22.5px;
     padding: 28px 25px 42px 20px;
     background-color: white;
   }

@@ -93,6 +93,26 @@
 
   &__play_button {
     display: flex;
+    align-items: center;
+    gap: 21px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #50555F;
+    white-space: nowrap;
+    cursor: pointer;
+
+    @media screen and (max-width: 1023px) {
+      font-size: 15px;
+    }
+
+    @media screen and (max-width: 479px) {
+      font-size: 13px;
+      gap: 15px;
+    }
+  }
+
+  &__play_span {
+    display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;

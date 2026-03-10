@@ -21,19 +21,13 @@ const Hero = () => {
 				</p>
 				<div
 					data-component='hero__buttons'
-					className={'max-mobile:gap-[25px] mt-[34px] flex items-center' + ' gap-[44px]'}
+					className={'max-mobile:gap-[25px] mt-[34px] flex items-center gap-[44px]'}
 				>
 					<button data-element='hero__button' className={styles.hero__button}>
 						Find out more
 					</button>
-					<button
-						data-element='hero__button'
-						className={
-							'max-tablet:text-[15px] max-mobile:text-[13px] flex cursor-pointer items-center gap-[21px] ' +
-							' max-mobile:gap-[15px] text-[17px] font-medium whitespace-nowrap text-[#50555F]'
-						}
-					>
-						<span data-element='hero__button_content' className={styles.hero__play_button}>
+					<button data-element='hero__button' className={styles.hero__play_button}>
+						<span data-element='hero__button_content' className={styles.hero__play_span}>
 							<span className={styles.hero__triangle}></span>
 						</span>
 						Play Demo
