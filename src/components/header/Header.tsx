@@ -1,11 +1,11 @@
 'use client'
 import React from 'react'
 import styles from './header.module.scss'
-import MobileMenu from '../../../../public/icons/MobileMenu'
+import MobileMenu from '../../../public/icons/MobileMenu'
 import NavMobile from '@/components/navMobile/NavMobile'
 import { useAppDispatch, useAppSelector } from '@/lib/hooks'
 import { setIsNavbarOpen, setSelectedLanguage } from '@/lib/slice'
-import Logo from '../../../../public/icons/Logo'
+import Logo from '../../../public/icons/Logo'
 import { MenuItem } from '@mui/material'
 import UISelect from '@/components/ui/select/Select'
 import Link from 'next/link'
@@ -18,30 +18,36 @@ const Header = () => {
 	return (
 		<header className={styles.header}>
 			<div data-component='logo'>
-				<a href='/'>
+				<a href='/public'>
 					<Logo />
 				</a>
 			</div>
-			<nav data-component='header__nav' className={'max-tablet:hidden flex w-full items-center'}>
+			<nav
+				data-component='header__nav'
+				className={'max-tablet:hidden font flex w-full items-center'}
+			>
 				<ul
 					data-component='header__nav_list'
 					className={'m-auto flex w-fit items-center gap-[55px]'}
 				>
 					<li className={`text-base-regular ${styles.header__nav_items}`}>
-						<Link href={'/'}>Destinations</Link>
+						<Link href={'/public'}>Destinations</Link>
 					</li>
 					<li className={`text-base-regular mr-[9px] ${styles.header__nav_items}`}>
-						<Link href={'/'}>Hotels</Link>
+						<Link href={'/public'}>Hotels</Link>
 					</li>
 					<li className={`text-base-regular mr-[7px] ${styles.header__nav_items}`}>
-						<Link href={'/'}>Flights</Link>
+						<Link href={'/public'}>Flights</Link>
 					</li>
 					<li className={`text-base-regular ${styles.header__nav_items}`}>
-						<Link href={'/'}>Bookings</Link>
+						<Link href={'/public'}>Bookings</Link>
 					</li>
 				</ul>
 				<div data-component='header__nav_buttons' className={'flex items-center gap-[42px]'}>
-					<Link href={'/'} className={`mr-[10px] font-medium! ${styles.header__nav_items}`}>
+					<Link
+						href={'/public'}
+						className={`mr-[10px] font-medium! ${styles.header__nav_items}`}
+					>
 						Login
 					</Link>
 					<button className={styles.header__signUp_button}>Sign up</button>

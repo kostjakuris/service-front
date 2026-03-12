@@ -11,14 +11,20 @@ interface ServiceCardProps {
 
 const ServiceCard: FC<ServiceCardProps> = ({ title, text, image }) => {
 	const cardRef = useRef<HTMLAnchorElement>(null)
+	const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
 	const handleMouseLeave = () => {
-		setTimeout(() => {
+		timeoutRef.current = setTimeout(() => {
 			if (!cardRef.current) return
 			cardRef.current.style.backgroundColor = 'transparent'
 		}, 300)
 	}
 
 	const handleMouseEnter = () => {
+		if (timeoutRef.current) {
+			clearTimeout(timeoutRef.current)
+		}
+
 		if (!cardRef.current) return
 		cardRef.current.style.backgroundColor = 'white'
 	}

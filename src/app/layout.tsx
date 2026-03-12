@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import StoreProvider from '@/app/StoreProvider'
 import { Header } from '@/components/homePage'
+import Footer from '@/components/footer/Footer'
 import { Google_Sans, Montserrat, Open_Sans, Poppins, Volkhov } from 'next/font/google'
 
 export const metadata: Metadata = {
@@ -54,6 +55,7 @@ export default function RootLayout({
 					<StoreProvider>
 						<Header />
 						{children}
+						<Footer />
 					</StoreProvider>
 				</div>
 			</body>

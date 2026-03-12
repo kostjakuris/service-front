@@ -1,5 +1,6 @@
 .services {
   position: relative;
+  flex: 0 1 270px;
 
   &__card_hover {
     background-color: var(--light-orange);
