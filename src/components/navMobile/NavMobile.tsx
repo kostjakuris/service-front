@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import styles from '@/components/homePage/header/header.module.scss'
+import styles from '@/components/header/header.module.scss'
 import Close from '../../../public/icons/Close'
 import { motion } from 'framer-motion'
 import navStyles from './nav-mobile.module.scss'

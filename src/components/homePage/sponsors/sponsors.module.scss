@@ -1,0 +1,21 @@
+.sponsors {
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 17px 40px 29px;
+    transition: scale 0.3s ease-in-out;
+    background-color: white;
+    border-radius: 10px;
+    &:hover {
+      scale: 1.06;
+      box-shadow: 0 1.85px 3.15px 0 rgba(0, 0, 0, 0.0048),
+      0 8.15px 6.52px 0 rgba(0, 0, 0, 0.0079),
+      0 20px 13px 0 rgba(0, 0, 0, 0.01),
+      0 38.52px 25.48px 0 rgba(0, 0, 0, 0.0121),
+      0 64.81px 46.85px 0 rgba(0, 0, 0, 0.0152),
+      0 100px 80px 0 rgba(0, 0, 0, 0.02);
+    }
+  }
+}

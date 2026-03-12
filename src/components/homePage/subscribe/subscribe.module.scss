@@ -1,0 +1,116 @@
+.subscribe {
+  position: relative;
+  margin-top: 146px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 129px 20px 20px 20px;
+  background-color: rgba(223, 215, 249, 0.2);
+  padding: 79px 0;
+
+  &::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    aspect-ratio: 264/352;
+    height: 100%;
+    background-image: url('/icons/subscribeRightBg.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &::after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    aspect-ratio: 480/361;
+    height: 100%;
+    background-image: url('/icons/subscribeLeftBg.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  &__sendIcon {
+    position: absolute;
+    top: -13px;
+    right: -20px;
+    border-radius: 50%;
+    background: linear-gradient(201.65deg, #747DEF 10.27%, #5E3BE1 100%);
+    padding: 11px 10px 16px 15px;
+  }
+
+  &__title {
+    max-width: 80%;
+    text-align: center;
+    font-size: 33px;
+    color: var(--light-blue);
+    line-height: 54px;
+    font-weight: 600;
+    @media screen and (max-width: 1023px) {
+      font-size: 28px;
+      line-height: 48px;
+    }
+    @media screen and (max-width: 479px) {
+      font-size: 22px;
+      line-height: 36px;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    margin-top: 74px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 31px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  &__input {
+    width: 100%;
+    position: relative;
+    padding: 26px 0 26px 66px;
+    outline: none;
+    border-radius: 10px;
+    background: white;
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 14px;
+    color: rgba(57, 66, 93, 1);
+
+    &::placeholder {
+      color: rgba(57, 66, 93, 1);
+      font-family: var(--font-montserrat), sans-serif;
+      font-size: 14px;
+    }
+  }
+
+  &__btn {
+    background: linear-gradient(180deg, #FF946D 0%, #FF7D68 100%);
+    color: #fff;
+    font-family: var(--font-open-sans), sans-serif;
+    font-size: 17px;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 23px 50px;
+    cursor: pointer;
+    transition: scale 0.3s ease-in-out;
+
+    &:hover {
+      scale: 1.06;
+    }
+
+  }
+}
