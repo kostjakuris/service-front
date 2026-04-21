@@ -45,11 +45,7 @@ const Services = () => {
 			<h2 className='text-heading-bold font-volkhov mt-[10px] text-center text-[rgba(20,24,62,1)]'>
 				We Offer Best Services
 			</h2>
-			<div
-				className={
-					'max-tablet:grid-cols-2 max-mobile:grid-cols-1 mt-[108px] grid grid-cols-4 gap-[25px]'
-				}
-			>
+			<div className={'mt-[108px] flex flex-wrap gap-[25px]'}>
 				{services.map((service) => (
 					<div key={service.id} className={styles.services}>
 						<span className={styles.services__card_hover} />

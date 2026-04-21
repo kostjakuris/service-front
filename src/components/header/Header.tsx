@@ -22,7 +22,10 @@ const Header = () => {
 					<Logo />
 				</a>
 			</div>
-			<nav data-component='header__nav' className={'max-tablet:hidden flex w-full items-center'}>
+			<nav
+				data-component='header__nav'
+				className={'max-tablet:hidden font flex w-full items-center'}
+			>
 				<ul
 					data-component='header__nav_list'
 					className={'m-auto flex w-fit items-center gap-[55px]'}
